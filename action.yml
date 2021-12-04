@@ -17,6 +17,11 @@ inputs:
       eg. '* * * * 1' will only run on mondays.
       Defaults to “always” (ie. `* * * * *`).
     default: '* * * * *'
+  count:
+    description: >
+      The number of repos to recommend.
+      The default depends on the value of the `publish-in` parameter.
+      The maximum is 10.
   gh-pat:
     description: >
       A GitHub Personal Access Token (PAT) needed by the Quine API.

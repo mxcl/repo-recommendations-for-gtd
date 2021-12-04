@@ -43,7 +43,7 @@ export declare class QuineAPI {
     getRepoRecommendationGroups(userId: number): Promise<void>;
     getRepoRecommendations(userId: number, recommendationGroups: {
         group: string;
-    }[]): Promise<IRepoRecommendationGroup[]>;
+    }[], desiredRecsCount?: number): Promise<IRepoRecommendationGroup[]>;
     getReposInfo(userId: number, repoIds: number[]): Promise<IRepoInfo[]>;
     private getHeaders;
 }

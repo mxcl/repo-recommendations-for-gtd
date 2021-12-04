@@ -80,7 +80,7 @@ export class QuineAPI {
     });
   }
 
-  public async getRepoRecommendations(userId: number, recommendationGroups: { group: string }[]): Promise<IRepoRecommendationGroup[]> {
+  public async getRepoRecommendations(userId: number, recommendationGroups: { group: string }[], desiredRecsCount?: number): Promise<IRepoRecommendationGroup[]> {
     const res = await fetch(config.quineURLs.scout.recommendation, {
       method: 'PUT',
       headers: this.getHeaders(true),
@@ -91,7 +91,11 @@ export class QuineAPI {
       })
     });
     const k = await res.json();
-    return k.recommendations;
+    if (desiredRecsCount) {
+      return k.recommendations.slice(0, desiredRecsCount);
+    } else {
+      return k.recommendations;
+    }
   }
 
   public async getReposInfo(userId: number, repoIds: number[]): Promise<IRepoInfo[]> {
