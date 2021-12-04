@@ -22,7 +22,7 @@ inputs:
       The number of repos to recommend.
       The default depends on the value of the `publish-in` parameter.
       The maximum is 10.
-  gh-pat:
+  github-token:
     description: >
       A GitHub Personal Access Token (PAT) needed by the Quine API.
       Required scopes: `repo: all` and `org: read`

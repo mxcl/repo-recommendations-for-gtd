@@ -26,7 +26,7 @@ export class GitHubInteraction {
     }
     this.owner = owner;
     this.repo = repo;
-    const PAT = getInput('gh-pat');
+    const PAT = getInput('github-token');
     if (!PAT) {
       throw new Error("🚨 Missing Personal Access Token. Make sure you that:\n" +
         "- you have a QUINE_GH_PAT secret added to your gtd repo's secrets page. It should contain your PAT with repo: all and org: read scopes.\n" +

@@ -21,7 +21,7 @@ jobs:
 
       - uses: quine-sh/repo-recommendations-for-gtd@main
         with:
-          gh-pat: ${{ secrets.QUINE_GITHUB_TOKEN }}
+          github-token: ${{ secrets.QUINE_GITHUB_TOKEN }}
 
           # ⬇️⬇️ don’t touch! the action manages these *for you* ⬇️⬇️
           quine-access-token: ${{ secrets.QUINE_ACCESS_TOKEN}}
@@ -31,7 +31,7 @@ jobs:
 See [@git-things-done](https://github.com/git-things-done) for further
 documentation.
 
-## Setting `gh-pat`
+## Setting `github-token`
 
 The Quine API requires a GitHub “personal access token”†:
 
@@ -123,7 +123,7 @@ jobs:
       - uses: quine-sh/repo-recommendations-for-gtd@main
         with:
           publish-in: "separate-issue"
-          gh-pat: ${{ secrets.QUINE_GITHUB_TOKEN }}
+          github-token: ${{ secrets.QUINE_GITHUB_TOKEN }}
           quine-access-token: ${{ secrets.QUINE_ACCESS_TOKEN}}
           quine-refresh-token: ${{ secrets.QUINE_REFRESH_TOKEN}}
 ```
